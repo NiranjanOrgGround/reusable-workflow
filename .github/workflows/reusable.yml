@@ -1,0 +1,20 @@
+name: Re-Usable workflow
+
+on:
+  workflow_call:
+    inputs:
+      need:
+        required: true
+        type: boolean
+
+jobs:
+  need:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run if its checked
+        if: inputs.need == 'true'
+        run: echo "it's checked"
+
+      - name: run if its not checked
+        if: inputs.need == 'false'
+        run: echo "it's not checked"
