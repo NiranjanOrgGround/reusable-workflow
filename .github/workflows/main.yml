@@ -8,7 +8,8 @@ on:
         type: boolean
 
 jobs:
-  check:
-    uses: NiranjanOrgGround/reusable-workflow/.github/workflows/reusable.yml@main
-    with:
-      check: inputs.check
+  print-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Check Input
+        run: echo "Check input value:${{inputs.check=='true'}}"
