@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Check Input
-        run: echo "Check input value:${{inputs.check=='true'}}"
+        run: echo "Raw Check input value: '${{ inputs.check }}'"
