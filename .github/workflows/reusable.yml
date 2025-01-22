@@ -3,18 +3,18 @@ name: Re-Usable workflow
 on:
   workflow_call:
     inputs:
-      need:
+      check:
         required: true
         type: boolean
 
 jobs:
-  need:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: run if its checked
-        if: inputs.need == 'true'
+        if: inputs.check == 'true'
         run: echo "it's checked"
 
       - name: run if its not checked
-        if: inputs.need == 'false'
+        if: inputs.check == 'false'
         run: echo "it's not checked"
