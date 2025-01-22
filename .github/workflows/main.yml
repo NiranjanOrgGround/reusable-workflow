@@ -1,0 +1,14 @@
+name: Main workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      need:
+        required: true
+        type: boolean
+
+jobs:
+  need:
+    uses: NiranjanOrgGround/reusable-workflow/.github/workflows/reusable.yml@main
+    with:
+      need: inputs.need
