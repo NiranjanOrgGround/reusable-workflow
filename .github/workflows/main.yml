@@ -3,12 +3,12 @@ name: Main workflow
 on:
   workflow_dispatch:
     inputs:
-      need:
+      check:
         required: true
         type: boolean
 
 jobs:
-  need:
+  check:
     uses: NiranjanOrgGround/reusable-workflow/.github/workflows/reusable.yml@main
     with:
-      need: inputs.need
+      check: inputs.check
